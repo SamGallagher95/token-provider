@@ -29,14 +29,14 @@ async function main() {
     const tokenProvider = new TokenProvider({
         name: "Gitlab Token Provider",
         quotas: [
-        {
-            numberOfRequests: 10,
-            duration: "1s",
-        },
-        {
-            numberOfRequests: 600,
-            duration: "1m",
-        },
+            {
+                numberOfRequests: 10,
+                duration: "1s",
+            },
+            {
+                numberOfRequests: 600,
+                duration: "1m",
+            },
         ],
         storage: new RedisStorageProvider({}),
     })
@@ -76,6 +76,8 @@ When we want to use the token, we call `token.use()`. This returns a `Promise` t
 This is the root instance of the library. Use it to get the corresponding `Token` instance for each key you are using.
 
 #### Constructor
+
+Below is the configuration for a new `TokenProvider`. It uses [parse-duration](https://www.npmjs.com/package/parse-duration) for duration fields.
 
 ```
 new TokenProvider({
@@ -142,7 +144,7 @@ This Storage Provider uses Redis as the backing data state.
 
 #### Constructor
 
-This uses the (redis)[https://www.npmjs.com/package/redis] package as the Redis client. The input configuration matches this clients ClientOpts exactly.
+This uses the [redis](https://www.npmjs.com/package/redis) package as the Redis client. The input configuration matches this clients ClientOpts exactly.
 
 ```
 const redisStorageProvider = new RedisStorageProvider({
