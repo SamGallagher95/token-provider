@@ -1,15 +1,16 @@
 {
-    "compilerOptions": {
-      "module": "commonjs",
-      "noImplicitAny": true,
-      "removeComments": true,
-      "preserveConstEnums": true,
-      "outDir": "dist",
-      "sourceMap": true,
-      "resolveJsonModule": true,
-      "experimentalDecorators": true,
-      "lib": ["ES2015", "dom"]
-    },
-    "include": ["src/**/*", "src/**/*.json"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
-  }
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "declaration": true,
+    "preserveConstEnums": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "lib": ["ES2015", "dom"]
+  },
+  "include": ["src/**/*", "src/**/*.json"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
