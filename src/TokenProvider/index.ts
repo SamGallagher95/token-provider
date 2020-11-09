@@ -31,7 +31,6 @@ export class TokenProvider {
   }
 
   public getToken(token: string): Token {
-    console.log("TokenProvider: GetToken");
     return this.storage.getToken(token);
   }
 }

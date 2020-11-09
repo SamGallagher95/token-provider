@@ -36,11 +36,6 @@ export class RedisStorageProvider implements ITokenStorageProvider {
 
     // Create a new token
     const newToken = new Token(uid, token, this);
-    this.tokens.push(newToken);
-
-    this.quotas.forEach((q) => {
-      console.log(this.getKey(newToken, q));
-    });
 
     return newToken;
   }

@@ -20,7 +20,6 @@ var TokenProvider = (function () {
         this.storage.configureStorage(this.config.uid, this.config.quotas);
     }
     TokenProvider.prototype.getToken = function (token) {
-        console.log("TokenProvider: GetToken");
         return this.storage.getToken(token);
     };
     return TokenProvider;

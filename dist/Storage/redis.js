@@ -50,17 +50,12 @@ var RedisStorageProvider = (function () {
         this.quotas = quotas;
     };
     RedisStorageProvider.prototype.getToken = function (token) {
-        var _this = this;
         var uid = utilities_1.hash(token);
         var foundToken = this.tokens.find(function (t) { return t.uid === uid; });
         if (foundToken) {
             return foundToken;
         }
         var newToken = new Token_1.Token(uid, token, this);
-        this.tokens.push(newToken);
-        this.quotas.forEach(function (q) {
-            console.log(_this.getKey(newToken, q));
-        });
         return newToken;
     };
     RedisStorageProvider.prototype.tokenCanBeUsed = function (token) {
