@@ -1,1 +1,1 @@
-declare module "token-provider";
+declare module "token-provider" {}
